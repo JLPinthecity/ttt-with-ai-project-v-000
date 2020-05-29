@@ -43,21 +43,7 @@ module Players
 
 
 
-
-           end
-      elsif board.cells[5] == Players::Human.token &&
-            corners.any? { |corner| board.cells[corner] == Players::Human.token }
-
-
-
-
-            Game::WIN_COMBINATIONS.select do |combo|
-
-         # First, check whether you have any chances to win, since it doesn't matter whether the opponent has a chance to win if you can win first.
-         if combo.select{|i| board.position(i+1) == token}.size == 2 && cmb.any?{|i| board.position(i+1) == " "}
-           move = cmb.select{|i| !board.taken?(i+1)}.first.to_i.+(1).to_s
-
-
+       end
 
 
 

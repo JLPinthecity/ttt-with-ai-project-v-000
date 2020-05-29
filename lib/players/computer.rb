@@ -39,18 +39,19 @@ module Players
            GAME::WIN_COMBINATIONS.select do |combo|
              if combo.select { |index| board.position(index + 1) == token }.size == 2 &&
                 combo.any? { board.position(index + 1) == " " }
-             move = combo.select { !board.taken?( index + 1 ) }.first.to_i.+(1).to_s
-           elsif
+              move = combo.select { !board.taken?( index + 1 ) }.first.to_i.+(1).to_s
+             elsif
              # check if it's their token twice
                 combo.select { |index| board.position(index + 1) == Players::Human.token }.size == 2 &&
                 combo.any? { board.position(index + 1) == " " }
              move = cmb.select{|i| !board.taken?(i+1)}.first.to_i.+(1).to_s
-           end
+             end
 
            # If none of the WIN_COMBINATIONS patterns have two squares taken by the same token and a third empty square, play into the first open square you find, first checking corners and then checking sides.
         move = [1, 3, 7, 9, 2, 4, 6, 8].detect{|i| !board.taken?(i)}.to_s if move == nil
       end
       move
-    end
-  end
-end
+
+    end #def 
+  end #class  
+end #module

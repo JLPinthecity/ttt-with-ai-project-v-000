@@ -37,7 +37,7 @@ module Players
        elsif board.turn_count == 3
            GAME::WIN_COMBINATIONS.each do |combo|
              
-            
+
            end
 
 

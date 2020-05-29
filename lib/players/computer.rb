@@ -37,7 +37,7 @@ module Players
        elsif board.turn_count == 3
            #check if it's your token
            GAME::WIN_COMBINATIONS.select do |combo|
-             if combo.select { |index| board.position(index + 1) == token }.size == 2 && 
+             if combo.select { |index| board.position(index + 1) == token }.size == 2 &&
                 combo.any? { board.position(index + 1) == " " }
              move = combo.select { !board.taken?(i+1) }.first.to_i.+(1).to_s
 

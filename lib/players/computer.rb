@@ -49,8 +49,9 @@ module Players
 
            # If no patterns, play into the first open square you find.
         move = [1, 3, 7, 9, 2, 4, 6, 8].detect{|i| !board.taken?(i)}.to_s if move == nil
-      end
+           end
       move
+       end
 
     end #def
   end #class

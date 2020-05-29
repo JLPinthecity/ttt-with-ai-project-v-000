@@ -37,7 +37,7 @@ module Players
            GAME::WIN_COMBINATIONS.each do |combo|
              binding.pry
              board.cells.combo[0] == board.cells.combo[1]
-             binding.pry
+            
            end
 
 

@@ -13,9 +13,10 @@ module Players
           unless !board.taken?("5")
              move = "5"
           else
-             move = corners.sample   #other player took middle on first round
+             move = corners.sample   #other player in middle on first round, corners free
           end
         #If you went first in a corner, take the opposite corner
+        #If you went first in middle, take a corner
       elsif board.turn_count == 2 && board.cells[5] != self.token
            if board.cells[0] == self.token
               move = "9"
@@ -28,7 +29,17 @@ module Players
            else
               free_corners = corners.select { |corner| corner == " " }
               move = free_corners.sample
+          
            end
+           #Take another corner + block
+           #Block the other player   
+       elsif board.turn_count == 3 
+           GAME::WIN_COMBINATIONS.each do |combo|
+             board.cells.combo[0] == board.cells.combo[1]
+             binding.pry
+               
+               
+         
 
 
 
@@ -46,25 +57,6 @@ module Players
          if combo.select{|i| board.position(i+1) == token}.size == 2 && cmb.any?{|i| board.position(i+1) == " "}
            move = cmb.select{|i| !board.taken?(i+1)}.first.to_i.+(1).to_s
 
-
-
-
-
-        #check to see if other player has two in a row.
-
-
-        #iterate through winning combos, if two of the positions include the other player's tokens,
-        #put my token in third space
-
-
-
-
-
-
-
-#startegy 1
-#go for corner first
-#then go for symmetry
 
 
 

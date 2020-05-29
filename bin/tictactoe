@@ -6,9 +6,9 @@ puts "Welcome to Tic-tac-toe!"
 
 game = Game.new
 
-until game.won? 
+until game.won?
   game.play
-end 
+end
 
 play_again = ""
 until play_again.downcase == "n" || play_again.downcase == "no"

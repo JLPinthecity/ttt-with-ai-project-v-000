@@ -52,6 +52,6 @@ module Players
       end
       move
 
-    end #def 
-  end #class  
+    end #def
+  end #class
 end #module

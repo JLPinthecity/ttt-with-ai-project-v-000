@@ -29,17 +29,17 @@ module Players
            else
               free_corners = corners.select { |corner| corner == " " }
               move = free_corners.sample
-          
+
            end
            #Take another corner + block
-           #Block the other player   
-       elsif board.turn_count == 3 
+           #Block the other player
+       elsif board.turn_count == 3
            GAME::WIN_COMBINATIONS.each do |combo|
              board.cells.combo[0] == board.cells.combo[1]
              binding.pry
-               
-               
-         
+
+
+
 
 
 

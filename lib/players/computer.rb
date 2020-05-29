@@ -36,7 +36,7 @@ module Players
            #Block the other player
        elsif board.turn_count == 3
            GAME::WIN_COMBINATIONS.each do |combo|
-            
+
              board.cells.combo[0] == board.cells.combo[1]
               binding.pry
            end

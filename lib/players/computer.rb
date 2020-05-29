@@ -40,13 +40,13 @@ module Players
              if combo.select { |index| board.position(index + 1) == token }.size == 2 &&
                 combo.any? { board.position(index + 1) == " " }
              move = combo.select { !board.taken?( index + 1 ) }.first.to_i.+(1).to_s
-           elsif 
+           elsif
              # check if it's their token twice
                 combo.select { |index| board.position(index + 1) == Players::Human.token }.size == 2 &&
                 combo.any? { board.position(index + 1) == " " }
-             move = cmb.select{|i| !board.taken?(i+1)}.first.to_i.+(1).to_s 
+             move = cmb.select{|i| !board.taken?(i+1)}.first.to_i.+(1).to_s
            end
-            
+
 
 
 

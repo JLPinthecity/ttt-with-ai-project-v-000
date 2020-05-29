@@ -10,8 +10,11 @@ module Players
          move = corners.sample
         #If second: middle first if not taken
       elsif board.turn_count == 1 #second round
-         move = "5" unless board.taken?("5")
-        #If second & middle is taken, go corner.
+          unless !board.taken?("5")
+             move = "5"
+          else 
+             move = corners.sample   #other player took middle on first round
+          end
         #If you went first in a corner, take the opposite corner
       elsif board.turn_count == 1 && board.cells[5] != self.token
            if board.cells[0] == self.token
@@ -22,7 +25,7 @@ module Players
               move = "3"
            elsif board.cells[8] == self.token
               move = "1"
-           else move = corners.sample
+           else move = corners.sample   #If second & middle is taken, go corner
            end
       elsif board.cells[5] == Players::Human.token &&
             corners.any? { |corner| board.cells[corner] == Players::Human.token }
